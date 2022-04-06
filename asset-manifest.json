@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/RaptorsBoxscore/static/css/main.129d5ed0.css",
+    "main.js": "/RaptorsBoxscore/static/js/main.48344e1c.js",
+    "static/js/787.dc640819.chunk.js": "/RaptorsBoxscore/static/js/787.dc640819.chunk.js",
+    "index.html": "/RaptorsBoxscore/index.html",
+    "main.129d5ed0.css.map": "/RaptorsBoxscore/static/css/main.129d5ed0.css.map",
+    "main.48344e1c.js.map": "/RaptorsBoxscore/static/js/main.48344e1c.js.map",
+    "787.dc640819.chunk.js.map": "/RaptorsBoxscore/static/js/787.dc640819.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.129d5ed0.css",
+    "static/js/main.48344e1c.js"
+  ]
+}
