@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/RaptorsBoxscore/static/css/main.e1e1844a.css",
-    "main.js": "/RaptorsBoxscore/static/js/main.73248671.js",
+    "main.js": "/RaptorsBoxscore/static/js/main.3978d119.js",
     "static/js/787.dc640819.chunk.js": "/RaptorsBoxscore/static/js/787.dc640819.chunk.js",
     "index.html": "/RaptorsBoxscore/index.html",
     "main.e1e1844a.css.map": "/RaptorsBoxscore/static/css/main.e1e1844a.css.map",
-    "main.73248671.js.map": "/RaptorsBoxscore/static/js/main.73248671.js.map",
+    "main.3978d119.js.map": "/RaptorsBoxscore/static/js/main.3978d119.js.map",
     "787.dc640819.chunk.js.map": "/RaptorsBoxscore/static/js/787.dc640819.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e1e1844a.css",
-    "static/js/main.73248671.js"
+    "static/js/main.3978d119.js"
   ]
 }
