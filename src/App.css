@@ -1,38 +1,231 @@
-.App {
-  text-align: center;
+body {
+    background-color: #CE1141;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.Main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(241, 239, 239);
+    width: 800px;
+    height: 570px;
+    margin: auto;
+    margin-top: 20px;
+    border-radius: 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.test {
+    min-width: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 800px;
+    gap: 20px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+
+#Toronto-raptors {
+    background-color: grey;
+    height: 0px;
 }
 
-.App-link {
-  color: #61dafb;
+.Raptors-logo {
+    width: 50px;
+    height:50px;
+    
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#Raptors-logo {
+    object-fit: scale-down;
+    width: 100%;
+    height: 100%;
+    margin-top: 15px;
+}
+
+#logo {
+    object-fit: scale-down;
+    width: 100%;
+    height: 100%;
+    margin-top: 15px;
+}
+h1 {
+    margin-top: 50px;
+    font-family: helvetica;
+}
+
+.Record-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100px;
+}
+
+p {
+    font-size: 24px;
+}
+
+.Score {
+    width: 40px;
+    font-weight: 600;
+    margin-left: 40px;
+    text-align: end;
+}
+
+.Score2 {
+    width: 40px;
+    margin-right: 40px;
+    font-weight: 600;
+}
+
+#record {
+    margin-top: 20px;
+    font-size: 12px;
+    color: rgb(114, 111, 111);
+}
+
+.Name {
+    margin-top: 25px;
+    font-size: 16px;
+    color: rgb(0, 0, 0);
+    width: 120px;
+}
+
+
+.Name2 {
+    margin-top: 25px;
+    font-size: 16px;
+    color: rgb(0, 0, 0);
+    width: 120px;
+}
+
+.Leaders {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 600px;
+    border-top: 1px solid rgb(188, 188, 188);
+}
+
+.Leaders2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 200px;
+}
+
+.Leaders3 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 250px;
+}
+
+.stats {
+    font-size: 12px;
+    margin-top: 35px;
+    color: rgb(114, 111, 111);
+}
+
+.points {
+    font-size: 12px;
+    font-weight: 600;
+    margin-top: 35px;
+    margin-right: 5px;
+}
+
+.Player-Name {
+    font-size: 12px;
+    margin-top: 25px;
+    width: 50px;
+    height: 50px;   
+}
+
+.headShot {
+    width: 100px;
+    height: 73px;
+}
+
+#Stats-Leader {
+    font-size: 16px;
+    text-align: center;
+}
+
+#Line {
+    height: 300px;
+    border: 0.3px solid rgb(206, 202, 202);;
+    margin-top: 20px;
+}
+
+#loading {
+    text-align: center;
+    margin-top: 250px;
+    font-size: 36px;
+    color: white;
+}
+
+.Middle-Div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60px;
+    height: 100px;
+}
+
+.Time {
+    font-size: 12px;
+    width: 80px;
+    text-align: center;
+}
+
+.VS {
+    height: 0px;
+}
+
+.Q {
+    height: 0px;
+    margin-bottom: 5px;
+    font-weight: 700;
+    font-size: 14px;
+    color: green;
+}
+
+@media screen and (max-width: 840px) {
+    .Name, .Name2 {
+        display: none;   
+    }
+    .Score, .Score2 {
+        width: auto;
+        overflow-x:hidden;
+    }
+    h1 {
+        text-align: center;
+        width: 200px;
+    }
+    body {
+        overflow-x:hidden;
+        width: auto;
+    }
+    .Leaders {
+        flex-direction: column;
+        align-items: center;
+        width: auto;
+    }
+    .Record-div {
+        width: auto;
+    }
+    .Main-container {
+        width: auto;
+        height: auto;
+        margin: 20px;
+        overflow-x:hidden;
+    }
+    .test {
+        width: auto;
+        gap: 0px;
+        overflow-x:hidden;
+        
+    }
+    #Line {
+        display: none;
+    }
 }
