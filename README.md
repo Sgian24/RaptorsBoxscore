@@ -1,6 +1,6 @@
 # Raptors Boxscore
 
-A boxscore I made that displays the score and stastical leaders for live Toronto Raptors games.
+A boxscore I made that displays the score and statistical leaders for live Toronto Raptors games.
 
 ## Tools Used
 
@@ -66,7 +66,41 @@ This was my first attempt at using the fetch API and tinkering with JSON in gene
     ```
      <p className="Score">
        {filter.length !== 0? filter.map(item => item.hTeam.shortName === "TOR"? item.hTeam.score.points : item.vTeam.score.points): "---"}</p>
-     ```
+       
+  - next I had difficulty rendering a single statistical leader, I only wanted to display the player with the highest total of a specified stat; i.e only the headshot and name of the player with the highest amount of points in the game will be displayed
+    - however, the "api-nba" API would give me JSON data comprised of multiple statistical leaders instead of just one; i.e there would be two statistical leaders for points with different totals
+    ```
+    leaders: Array(6)
+    0: {points: '37', playerId: '479', name: 'Pascal Siakam'}
+    1: {rebounds: '11', playerId: '479', name: 'Pascal Siakam'}
+    2: {assists: '12', playerId: '479', name: 'Pascal Siakam'}
+    3: {points: '16', playerId: '1058', name: 'Gary Trent Jr.'}
+    4: {assists: '2', playerId: '570', name: 'Thaddeus Young'}
+    5: {rebounds: '10', playerId: '2789', name: 'Scottie Barnes'}
+    ```
+    - in the above example, the JSON data is giving me two objects that have "points" properties, two objects that have "assists" properties and two objects that have "rebounds" properties; I only want to render the `Array[0]` object because it has the greater "points" property (37 points compared to 16 points) 
+      - solved by first filtering out the objects that have either the property "points", "rebounds" or "assists" depending on the specified stat
+      ```
+      const statsFilter = data[0].api.games.filter(item => item.hTeam.shortName === "TOR" || item.vTeam.shortName === "TOR")
+      .length !== 0? data[2].api.game[0].hTeam: null;
+      
+      const rapsPoints = statsFilter !== null? statsFilter.shortName === "TOR"? data[2].api.game[0].hTeam.leaders
+      .filter(item => item.hasOwnProperty("points")): data[2].api.game[0].vTeam.leaders.filter(item => item.hasOwnProperty("points")): null;
+      ```
+      - I then proceeded to parse each item in the filtered array to an integer using a `.map()` function
+      ```
+      const rapsPointsParsed = rapsPoints !== null? rapsPoints.map(item => parseInt(item.points)): null;
+      ```
+      - after, I set a `const` variable to the largest integer in `const rapsPointsParsed` using `Math.max()`
+      ```
+      const rapsPointsLeader = rapsPointsParsed !== null? Math.max(...rapsPointsParsed): null;
+      ```
+      - finally, to get the appropriate data to render I filtered out the properties that are equal to `const rapsPointsLeader`
+      ```
+       <img className="headShot" src={filter.length !== 0? data[1].filter(item => item.firstName == rapsPointsSplitFN && item.lastName.includes(rapsPointsSplitLN)).map(item => item.headShotUrl)[0]: "https://secure.espncdn.com/combiner/i?img=/i/headshots/nophoto.png"}/>
+          <p className="Player-Name">{filter.length !== 0? rapsPoints.filter(item => item.points == rapsPointsLeader).map(item => item.name)[0]: ""}</p>
+          <p className="points">{filter.length !== 0? rapsPoints.filter(item => item.points == rapsPointsLeader).map(item => item.points)[0]: ""}</p>
+      ```
   - finally, I had difficulty figuring out how to refetch data without refreshing the actual page
     - solved by using a `setInterval()` function within the `useEffect` hook, fetching data every 15 seconds
     ```
